@@ -3,15 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".tablayoutContent.TabFragmentOne">
 
-    <TextView
+
+    <EditText
+        android:id="@+id/et"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Tab 1"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        android:gravity="center"
+        android:layout_height="60dp"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        />
+
+    <EditText
+        android:id="@+id/et_number"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:inputType="number"
         />
 
 </FrameLayout>

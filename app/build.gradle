@@ -5,18 +5,6 @@ plugins {
     id 'io.michaelrocks.paranoid'
 }
 
-def versionFromManifest = "9999"
-
-task parseManifest() {
-    def manifest = new XmlSlurper().parse(file(android.sourceSets.main.manifest.srcFile)).declareNamespace(android: 'http://schemas.android.com/apk/res/android');
-    println manifest.@package
-    manifest.application["meta-data"].each {
-        def m = it.attributes()['android:name'] =~ /app_version/
-        if (m.find()) {
-            versionFromManifest = it.attributes()['android:value'].toString()
-        }
-    }
-}
 
 
 android {
@@ -26,8 +14,8 @@ android {
         applicationId "com.tokeninc.playground"
         minSdk 25
         targetSdk 30
-        versionCode versionFromManifest.toInteger()
-        versionName "${versionFromManifest}"
+        versionCode 1
+        versionName "1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -151,6 +139,7 @@ dependencies {
     implementation("androidx.work:work-runtime-ktx:$work_version")
 
     implementation 'io.github.ahmad-hamwi:tabsync:1.0.0'
+
 
 
 }
